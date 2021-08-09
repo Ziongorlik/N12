@@ -1,0 +1,17 @@
+package utils;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class DriverSingleton {
+    private static WebDriver driver;
+
+    public static WebDriver getDriveInstance(){
+        if (driver == null) {
+            System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+            driver = new ChromeDriver();
+        }
+        return driver;
+    }
+}
